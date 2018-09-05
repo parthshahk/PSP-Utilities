@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Attendance Calculator</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Calculate cumulative class attendance." />
+        <meta name="keywords" content="parth shah, web applications, attendance calculator, design, parthshahk, web development " />
+        <meta name="robots" content="index, follow">
+        <meta name="revisit-after" content="3 month">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 center-align grey-text text-darken-3">
+                    <h2 class="hide-on-med-and-down">Attendance Calculator</h2>
+                    <h4 class="hide-on-large-only">Attendance Calculator</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col center-align s12 grey-text text-darken-2">
+                    <h6>Current Cumulative Overall Attendance(Hours):</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s5 m3 l2 offset-l4 offset-m2">
+                    <input id="current_att_n" type="number" value="0">
+                </div>
+                <div class="col s2 m2 l1 grey-text text-darken-2">
+                    <h6>Out Of</h6>
+                </div>
+                <div class="input-field col s5 m3 l2">
+                    <input id="current_att_d" type="number" value="0">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 m4 offset-s3 offset-m4 l4 offset-l4">
+                    <input id="hrs_per_day" type="number">
+                    <label for="hrs_per_day">Hours Per Day</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 m4 offset-s3 offset-m4 l4 offset-l4">
+                    <input id="days_in_phase" type="number">
+                    <label for="days_in_phase">Days In Phase</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 m4 offset-s3 offset-m4 l4 offset-l4">
+                    <input id="hrs_missed" type="number">
+                    <label for="hrs_missed">Hours To Be Missed</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s4 offset-s4 l2 offset-l5">
+                    <a class="waves-effect waves-light btn teal" onclick="calc()" href="#">Calculate</a>
+                </div>
+            </div>
+        </div>
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large teal">
+                <i class="large material-icons">menu</i>
+            </a>
+            <ul>
+                <li><a class="btn-floating red" href="http://www.parthshahk.xyz"><i class="material-icons">reply</i></a></li>
+            </ul>
+        </div>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script>
+
+            var current_att_n,current_att_d,total_hrs,missed_hrs,final,x,y;
+            function calc(){
+
+                total_hrs=$('#hrs_per_day').val()*$('#days_in_phase').val();
+                if(total_hrs==0){
+                    Materialize.toast('Please fill the \'Hours Per Day\' and \'Days Per Phase\' fields first.', 5500);
+                    return 0;
+                }
+                current_att_n=$('#current_att_n').val();
+                current_att_d=$('#current_att_d').val();
+                missed_hrs=$('#hrs_missed').val();
+                if(missed_hrs==""){missed_hrs=0;}
+                x=parseInt(current_att_n)+parseInt(total_hrs)-parseInt(missed_hrs);
+                y=parseInt(current_att_d)+total_hrs;
+                if(current_att_d==0){
+
+                    final=(parseInt(total_hrs)-parseInt(missed_hrs))/parseInt(total_hrs);
+                }else{
+
+                    final=x/y;
+                }
+                final=Math.floor(final*10000)/100;
+                Materialize.toast('Your attendance will be: '+final+'%', 7000)
+            }
+        </script>
+    </body>
+</html>
