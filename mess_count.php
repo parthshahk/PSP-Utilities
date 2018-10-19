@@ -46,10 +46,9 @@
 <html>
     <head>
         <title>Mess-Count</title>
-        <link rel="icon" type="image/png" href="https://www.parthshah.xyz/favicon_code.png"/>
+        <link rel="icon" type="image/png" href="https://parthshah.xyz/favicon.ico"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="robots" content="noindex, nofollow" />
         <style>
             label{
                 margin-right: 25px;
@@ -97,7 +96,7 @@
 
                                     $all_months_row=mysqli_fetch_assoc($all_months_obj);
 
-                                    $bill=($all_months_row['Breakfast']*25)+($all_months_row['Lunch']*50)+($all_months_row['Dinner']*60);
+                                    $bill=($all_months_row['Breakfast']*30)+($all_months_row['Lunch']*60)+($all_months_row['Dinner']*60);
 
                                     if(!$all_months_row['Status']){
                                         $disable="";

@@ -2,10 +2,9 @@
 <html>
     <head>
         <title>Attendance Tracker</title>
-        <link rel="icon" type="image/png" href="https://www.parthshah.xyz/favicon_code.png"/>
+        <link rel="icon" type="image/png" href="https://parthshah.xyz/favicon.ico"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="robots" content="noindex, nofollow" />
         <style>
             .input-field input[type=number]:focus + label {
                 color: #00c853 !important;
@@ -21,7 +20,7 @@
         <div class="container">
             <div class="row">
                 <div class="col s12">
-                    <table class="striped responsive-table">
+                    <table class="striped">
                         <thead>
                             <tr>
                                 <th>Subject</th>

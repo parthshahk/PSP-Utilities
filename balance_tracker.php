@@ -2,11 +2,10 @@
 <html>
     <head>
         <title>Balance Tracker</title>
-        <link rel="icon" type="image/png" href="https://www.parthshah.xyz/favicon_code.png"/>
+        <link rel="icon" type="image/png" href="https://parthshah.xyz/favicon.ico"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="robots" content="noindex, nofollow" />
         <style>
 
             .input-field input[type=text]:focus+label,input[type=number]:focus + label {
@@ -23,7 +22,7 @@
     <body>
         <div class="container">
             <div class="row">
-                <table class="striped responsive-table">
+                <table class="striped">
                     <thead>
                         <tr>
                             <th>Entity</th>
@@ -34,7 +33,7 @@
                     </thead>
                     <tbody>
                         <?php
-                            $con=mysqli_connect("mysql.hostinger.in","u696737897_parth","`7w4]8io`aR8xu1AB1","u696737897_datab");
+                            $con=mysqli_connect("mysql.hostinger.in","u696737897_parth","`7w4]8io`aR8xu1AB1","u696737897_datab");                            
                                                             
                             $result_obj=mysqli_query($con,"SELECT * FROM balance_tracker");
                                                                                                 
