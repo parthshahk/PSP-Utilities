@@ -78,7 +78,7 @@
                     <table class="centered">
                         <thead>
                             <tr>
-                                <th>M</th>
+                                <th>Month</th>
                                 <th>Breakfast</th>
                                 <th>Lunch</th>
                                 <th>Dinner</th>
